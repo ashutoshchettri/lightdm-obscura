@@ -1,5 +1,29 @@
 let currentUser;
 
+document.addEventListener("DOMContentLoaded", () => {
+    const shutdownBtn = $("shutdown-btn");
+    const restartBtn = $("restart-btn");
+    const sleepBtn = $("sleep-btn");
+
+    if (lightdm.can_shutdown && shutdownBtn) {
+        shutdownBtn.addEventListener("click", () => {
+            lightdm.shutdown();
+        });
+    }
+
+    if (lightdm.can_restart && restartBtn) {
+        restartBtn.addEventListener("click", () => {
+            lightdm.restart();
+        });
+    }
+
+    if (lightdm.can_suspend && sleepBtn) {
+        sleepBtn.addEventListener("click", () => {
+            lightdm.suspend();
+        });
+    }
+});
+
 this.addEventListener("load", () => {
     const userDropdown = $("user-dropdown");
     const userDropdownBtn = $("user-dropdown-btn");
@@ -93,21 +117,3 @@ function set_user(user) {
 function $(id) {
     return document.getElementById(id);
 }
-
-document.getElementById('shutdown-btn').addEventListener('click', () => {
-    if (confirm('Are you sure you want to shut down the system?')) {
-        lightdm.shutdown();
-    }
-});
-
-document.getElementById('restart-btn').addEventListener('click', () => {
-    if (confirm('Are you sure you want to restart the system?')) {
-        lightdm.restart();
-    }
-});
-
-document.getElementById('sleep-btn').addEventListener('click', () => {
-    if (confirm('Are you sure you want to suspend the system?')) {
-        lightdm.suspend();
-    }
-});
