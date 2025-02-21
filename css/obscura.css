@@ -79,20 +79,8 @@ body::before {
     width: 100%;
     height: 100%;
     z-index: -10;
-    background-image: url(../assets/keyboard.jpg);
+    background-image: url(../assets/space.png);
     background-size: cover;
-}
-
-body::after {
-    content: "";
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 50%;
-    height: 100%;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    z-index: -5;
 }
 
 *::selection {
@@ -103,7 +91,7 @@ body::after {
 #toast-container > div,
 #login-box,
 .ghost {
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.9);
 }
 
 button, input {
@@ -259,11 +247,12 @@ input:focus {
     padding: 16px;
     height: 400px;
     position: fixed;
-    margin: auto;
-    top: 0;
-    bottom: 0;
-    left: 5%;
+    margin:auto;
+    position:fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
     width: 600px;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: solid 2px var(--background-lower);
 }
