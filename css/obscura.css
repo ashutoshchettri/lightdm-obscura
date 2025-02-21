@@ -100,8 +100,10 @@ body::after {
     color: var(--background);
 }
 
-#toast-container > div, #login-box, .ghost {
-    background-color: var(--background);
+#toast-container > div,
+#login-box,
+.ghost {
+    background-color: transparent;
 }
 
 button, input {
@@ -182,7 +184,9 @@ input:focus {
     left: 0;
 }
 
-.show {display:block;}
+.show {
+    display:block;
+}
 
 .ghost {
     border: none;
@@ -213,7 +217,7 @@ input:focus {
 
 #login-btn:disabled {
     border-color: var(--background-low);
-    color: var(--grey)
+    color: var(--grey);
 }
 
 #toast-container > div {
@@ -260,6 +264,6 @@ input:focus {
     bottom: 0;
     left: 5%;
     width: 600px;
-    border: solid 2px var(--background-lower);
-    background-color: var(--background);
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
